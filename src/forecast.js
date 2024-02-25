@@ -12,9 +12,15 @@ export async function getForecastData(data){
 
     for(let i = 0; i < hrsArr.length; i++){
         if(hrsArr[i] > 23){
-            forecast[hrsArr[i]] = data.forecast.forecastday[1].hour[hrsArr[i] - 23]
+            const {temp_f, temp_c, condition, time} = data.forecast.forecastday[1].hour[hrsArr[i] - 23];
+            const {text} = condition;
+            const splicedTime = time.slice(11,16);
+            forecast[hrsArr[i]] = {temp_f, temp_c, text, splicedTime};
         } else {
-            forecast[hrsArr[i]] = data.forecast.forecastday[0].hour[hrsArr[i]];
+            const {temp_f, temp_c, condition, time} = data.forecast.forecastday[0].hour[hrsArr[i]];
+            const {text} = condition;
+            const splicedTime = time.slice(11,16);
+            forecast[hrsArr[i]] = {temp_f, temp_c, text, splicedTime};
         }
     }
 
