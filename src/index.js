@@ -17,10 +17,10 @@ async function combinedData(){
     const location = await getLocationData(apiCall);
     const tempData = await getTempData(apiCall);
 
-    const time = await(getForecastData(apiCall));
-    console.log(time);
+    const forecast = await(getForecastData(apiCall));
+    console.log(forecast);
 
-    const data = {...location, ...tempData, ...time};
+    const data = {...location, ...tempData, ...forecast};
 
     console.log(data);
 }
