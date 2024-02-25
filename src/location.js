@@ -1,5 +1,7 @@
-export async function getLocation(data) {
+export async function getLocationData(data) {
     const location = data.location.name;
 
-    return {location};
+    const condition = data.current.condition.text;
+
+    return {location, condition};
 }
