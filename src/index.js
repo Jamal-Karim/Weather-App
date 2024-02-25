@@ -1,5 +1,6 @@
 import { getLocationData } from "./location.js";
 import { getTempData } from "./temp.js";
+import { getForecastData } from "./forecast.js";
 
 export async function getData(){
     const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=corona&days=3');
@@ -16,7 +17,10 @@ async function combinedData(){
     const location = await getLocationData(apiCall);
     const tempData = await getTempData(apiCall);
 
-    const data = {...location, ...tempData};
+    const time = await(getForecastData(apiCall));
+    console.log(time);
+
+    const data = {...location, ...tempData, ...time};
 
     console.log(data);
 }

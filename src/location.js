@@ -3,5 +3,9 @@ export async function getLocationData(data) {
 
     const condition = data.current.condition.text;
 
-    return {location, condition};
+    const sunrise = data.forecast.forecastday[0].astro.sunrise;
+
+    const sunset = data.forecast.forecastday[0].astro.sunset;
+
+    return {location, condition, sunrise, sunset};
 }
