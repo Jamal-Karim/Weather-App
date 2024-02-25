@@ -1,15 +1,5 @@
-import { getData } from "./index.js";
+export async function getLocation(data) {
+    const location = data.location.name;
 
-console.log('location found');
-
-export async function getLocation() {
-        const data = await getData();
-
-        const location = data.location.name;
-
-        console.log(location);
-
-        return location;
+    return {location};
 }
-
-getLocation();

@@ -1,6 +1,5 @@
 import { getLocation } from "./location.js";
-
-console.log('hello world');
+import { getTempF } from "./temp.js";
 
 export async function getData(){
     const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=corona&days=3');
@@ -11,3 +10,15 @@ export async function getData(){
 
     return data;
 }
+
+async function combinedData(){
+    const apiCall = await getData();
+    const location = await getLocation(apiCall);
+    const tempF = await getTempF(apiCall);
+
+    const data = {...location, ...tempF};
+
+    console.log(data);
+}
+
+combinedData();
