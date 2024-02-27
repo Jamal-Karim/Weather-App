@@ -66,6 +66,11 @@ body {
   top: -120px;
 }
 
+.titleContainer {
+  margin-left: 8rem;
+  margin-bottom: 11rem;
+}
+
 .title {
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
@@ -73,6 +78,8 @@ body {
   margin-bottom: 2rem;
   color: var(--black);
 }
+
+/* Landing Page */
 
 #city {
   width: 25vw;
@@ -92,10 +99,23 @@ body {
 #city::placeholder {
   color: var(--black);
   text-align: center;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
-.titleContainer {
-  margin-left: 8rem;
-  margin-bottom: 11rem;
+.inputContainer {
+  position: relative;
 }
+
+.searchIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 31%;
+  left: 42.5%;
+  opacity: 0.7;
+}
+
+.inputContainer input:focus + .searchIcon {
+  visibility: hidden;
+}
+
+/* Input Field Styling */

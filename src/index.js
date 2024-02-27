@@ -6,6 +6,7 @@ import './styles/main.css';
 
 const errorMessage = document.getElementById('error');
 const userCity = document.getElementById('city');
+const searchIcon = document.querySelector('.searchIcon');
 
 userCity.addEventListener('focus', () => {
     userCity.removeAttribute('placeholder');
@@ -24,7 +25,8 @@ export async function getData(city){
         const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=${city}&days=3`);
 
         if(!response.ok){
-            errorMessage.textContent = 'Please enter valid city';
+            userCity.value = '';
+            userCity.setAttribute('placeholder','Please enter valid city');
             throw new Error('Failed to fetch data');
         }
 
@@ -60,7 +62,7 @@ async function combinedData(city){
     
 }
 
-document.getElementById('form').addEventListener('submit', (event) => {
+searchIcon.addEventListener('click', (event) => {
     event.preventDefault();
 
     const city = userCity.value;
