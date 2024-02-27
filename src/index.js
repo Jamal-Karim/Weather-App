@@ -2,6 +2,11 @@ import { getLocationData } from "./location.js";
 import { getTempData } from "./temp.js";
 import { getForecastData } from "./forecast.js";
 
+import './styles/main.css';
+
+const errorMessage = document.getElementById('error');
+const userCity = document.getElementById('city');
+
 export async function getData(city){
 
     try{
@@ -9,7 +14,7 @@ export async function getData(city){
         const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=${city}&days=3`);
 
         if(!response.ok){
-            document.getElementById('error').textContent = 'Please enter valid city';
+            errorMessage.textContent = 'Please enter valid city';
             throw new Error('Failed to fetch data');
         }
 
@@ -45,14 +50,12 @@ async function combinedData(city){
     
 }
 
-// combinedData();
-
 document.getElementById('form').addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const city = document.getElementById('city').value;
+    const city = userCity.value;
 
-    document.getElementById('error').textContent = '';
+    errorMessage.textContent = '';
 
     combinedData(city);
 })
