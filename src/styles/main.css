@@ -1,25 +1,101 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  * {
-    margin: 0;
-  }
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  input, button, textarea, select {
-    font: inherit;
-  }
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  #root, #__next {
-    isolation: isolate;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
 }
 
 /* CSS Reset */
+
+:root {
+  --mainGrey: #d9dadf;
+  --accentGrey: #a7abb7;
+  --black: #1d1d1f;
+  --white: #ffffff;
+}
+
+/* Variables */
+
+body {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--mainGrey);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+}
+
+.mainImg {
+  position: absolute;
+  left: 65%;
+  top: -120px;
+}
+
+.title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 8rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+#city {
+  width: 25vw;
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 180px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: 1.5rem;
+}
+
+#city[type="text"] {
+  text-align: start;
+  padding-left: 20px;
+}
+
+#city::placeholder {
+  color: var(--black);
+  text-align: center;
+  padding-right: 20px;
+}
+
+.titleContainer {
+  margin-left: 8rem;
+  margin-bottom: 11rem;
+}

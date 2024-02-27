@@ -7,6 +7,16 @@ import './styles/main.css';
 const errorMessage = document.getElementById('error');
 const userCity = document.getElementById('city');
 
+userCity.addEventListener('focus', () => {
+    userCity.removeAttribute('placeholder');
+})
+
+userCity.addEventListener('blur', () => {
+    if(!userCity.value.trim()){
+        userCity.setAttribute('placeholder', 'Enter a city to get started!');
+    }
+})
+
 export async function getData(city){
 
     try{
