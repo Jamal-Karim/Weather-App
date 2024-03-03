@@ -119,3 +119,111 @@ body {
 }
 
 /* Input Field Styling */
+
+#city2 {
+  width: 15vw;
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 180px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: 1.2rem;
+}
+
+#city2[type="text"] {
+  text-align: start;
+  padding-left: 20px;
+}
+
+#city2::placeholder {
+  color: var(--black);
+  text-align: center;
+  padding-right: 2rem;
+}
+
+#city2:focus::placeholder {
+  color: transparent;
+}
+
+.inputContainer2 {
+  position: relative;
+  margin-left: 1.4rem;
+}
+
+.searchIcon2 {
+  cursor: pointer;
+  position: absolute;
+  top: 29%;
+  left: 75.5%;
+  opacity: 0.7;
+}
+
+.inputContainer2 input:focus + .searchIcon2 {
+  visibility: hidden;
+}
+
+/* Input Field Styling For Forecast */
+
+.weatherUi {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 2rem;
+}
+
+.tempBtn {
+  font-family: "Quicksand", sans-serif;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ffffff;
+  width: 45px;
+  height: 45px;
+  margin-right: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.headerForecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling For Header Of Forecast */
+
+.statsContainer {
+  width: 100%;
+  display: flex;
+}
+
+.leftContainer {
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightContainer {
+  width: 80vw;
+}
+
+/* Positioning For Containers  */
+
+.currStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.weatherCondition img {
+  width: 250px;
+  height: 250px;
+}
+
+.temp {
+  font-family: "Quicksand", sans-serif;
+  font-size: 6rem;
+  font-weight: 500;
+}
