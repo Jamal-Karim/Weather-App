@@ -227,3 +227,31 @@ body {
   font-size: 6rem;
   font-weight: 500;
 }
+
+.place {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.9rem;
+}
+
+.sunTimes {
+  display: flex;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.sunrise,
+.sunset {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+
+.sunriseTime,
+.sunsetTime {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+/* Left Section For Current Stats */
