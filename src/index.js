@@ -1,9 +1,11 @@
 import { getLocationData } from "./location.js";
 import { getTempData } from "./temp.js";
 import { getForecastData } from "./forecast.js";
+import { loadWeatherUi } from "./loadUi.js";
 
 import "./styles/main.css";
 
+const body = document.querySelector("body");
 const errorMessage = document.getElementById("error");
 const userCity = document.getElementById("city");
 const searchIcon = document.querySelector(".searchIcon");
@@ -32,7 +34,7 @@ export async function getData(city) {
 
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     return data;
   } catch (error) {
@@ -48,7 +50,7 @@ async function combinedData(city) {
     const tempData = await getTempData(apiCall);
 
     const forecast = await getForecastData(apiCall);
-    console.log(forecast);
+    // console.log(forecast);
 
     const data = { ...location, ...tempData, ...forecast };
 
@@ -66,4 +68,5 @@ searchIcon.addEventListener("click", (event) => {
   // errorMessage.textContent = '';
 
   combinedData(city);
+  body.appendChild(loadWeatherUi());
 });

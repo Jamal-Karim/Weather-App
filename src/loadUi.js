@@ -14,6 +14,12 @@ export function loadWeatherUi(
   uv,
   forecast
 ) {
+  const backgroundImg = document.querySelector(".mainImg");
+  const landingDiv = document.querySelector(".titleContainer");
+
+  backgroundImg.style.display = "none";
+  landingDiv.style.display = "none";
+
   //top div
   const weatherUi = document.createElement("div");
   weatherUi.classList.add("weatherUi");
