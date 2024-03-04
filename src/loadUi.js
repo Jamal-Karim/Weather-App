@@ -1,3 +1,5 @@
+import { createHumidityWindUvContainer } from "./temp";
+
 export function loadWeatherUi(
   weatherSvg,
   fahrenheit,
@@ -5,7 +7,10 @@ export function loadWeatherUi(
   cityName,
   weatherText,
   sunRise,
-  sunSet
+  sunSet,
+  humidity,
+  wind_mph,
+  uv
 ) {
   //top div
   const weatherUi = document.createElement("div");
@@ -59,6 +64,31 @@ export function loadWeatherUi(
   const statsContainer = document.createElement("div");
   statsContainer.classList.add("statsContainer");
 
+  statsContainer.appendChild(
+    createLeftContainer(
+      weatherSvg,
+      fahrenheit,
+      celsius,
+      cityName,
+      weatherText,
+      sunRise,
+      sunSet
+    )
+  );
+
+  const rightContainer = document.createElement("div");
+  rightContainer.classList.add("rightContainer");
+}
+
+function createLeftContainer(
+  weatherSvg,
+  fahrenheit,
+  celsius,
+  cityName,
+  weatherText,
+  sunRise,
+  sunSet
+) {
   //left section of ui
   const leftContainer = document.createElement("div");
   leftContainer.classList.add("leftContainer");
@@ -129,4 +159,6 @@ export function loadWeatherUi(
 
   //left container done
   leftContainer.appendChild(currentStats);
+
+  return leftContainer;
 }
