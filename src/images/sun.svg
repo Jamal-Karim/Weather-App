@@ -1,11 +1,11 @@
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
-</g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="6" stroke="#FFB703" stroke-width="1.5"></circle> 
-<path d="M12 2V3" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M12 21V22" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M22 12L21 12" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M3 12L2 12" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M19.0708 4.92969L18.678 5.32252" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M5.32178 18.6777L4.92894 19.0706" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M19.0708 19.0703L18.678 18.6775" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M5.32178 5.32227L4.92894 4.92943" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+<svg width="64px" height="64px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFB703">
+  <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M22 12L23 12" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M12 2V1" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M12 23V22" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M20 20L19 19" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M20 4L19 5" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M4 20L5 19" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M4 4L5 5" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M1 12L2 12" stroke="#FFB703" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
