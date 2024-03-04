@@ -1,3 +1,4 @@
+import { createForecastDiv } from "./forecast";
 import { createHumidityWindUvContainer } from "./temp";
 
 export function loadWeatherUi(
@@ -10,7 +11,8 @@ export function loadWeatherUi(
   sunSet,
   humidity,
   wind_mph,
-  uv
+  uv,
+  forecast
 ) {
   //top div
   const weatherUi = document.createElement("div");
@@ -78,6 +80,17 @@ export function loadWeatherUi(
 
   const rightContainer = document.createElement("div");
   rightContainer.classList.add("rightContainer");
+
+  rightContainer.appendChild(createForecastDiv(forecast));
+  rightContainer.appendChild(
+    createHumidityWindUvContainer(humidity, wind_mph, uv)
+  );
+
+  statsContainer.appendChild(rightContainer);
+
+  weatherUi.appendChild(statsContainer);
+
+  return weatherUi;
 }
 
 function createLeftContainer(
