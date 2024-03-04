@@ -144,11 +144,11 @@ function createLeftContainer(
 
   //sunrise
   const sunRiseDiv = document.createElement("div");
-  sunRiseDiv.classList.add("sunRise");
+  sunRiseDiv.classList.add("sunrise");
 
   const sunRiseText = document.createElement("p");
   sunRiseText.classList.add("sunriseTime");
-  sunRiseText.textContent = "6: 27 AM";
+  sunRiseText.textContent = "6:27 AM";
 
   const sunRiseSvg = document.createElement("img");
   sunRiseSvg.src = "/src/images/sunrise.svg";
@@ -158,11 +158,11 @@ function createLeftContainer(
 
   //sunset
   const sunSetDiv = document.createElement("div");
-  sunSetDiv.classList.add("sunSet");
+  sunSetDiv.classList.add("sunset");
 
   const sunSetText = document.createElement("p");
   sunSetText.classList.add("sunsetTime");
-  sunSetText.textContent = "5: 41 PM";
+  sunSetText.textContent = "5:41 PM";
 
   const sunSetSvg = document.createElement("img");
   sunSetSvg.src = "/src/images/sunset.svg";

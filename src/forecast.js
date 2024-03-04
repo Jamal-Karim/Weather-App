@@ -61,7 +61,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Time = document.createElement("p");
   hour1Time.classList.add("time");
-  hour1Time.textContent = "1:00 PM";
+  hour1Time.textContent = "1:00PM";
   hour1.appendChild(hour1Time);
 
   const hour1Img = document.createElement("img");
@@ -81,7 +81,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Time = document.createElement("p");
   hour2Time.classList.add("time");
-  hour2Time.textContent = "2:00 PM";
+  hour2Time.textContent = "2:00PM";
   hour2.appendChild(hour2Time);
 
   const hour2Img = document.createElement("img");
@@ -101,7 +101,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Time = document.createElement("p");
   hour3Time.classList.add("time");
-  hour3Time.textContent = "3:00 PM";
+  hour3Time.textContent = "3:00PM";
   hour3.appendChild(hour3Time);
 
   const hour3Img = document.createElement("img");
@@ -121,7 +121,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Time = document.createElement("p");
   hour4Time.classList.add("time");
-  hour4Time.textContent = "4:00 PM";
+  hour4Time.textContent = "4:00PM";
   hour4.appendChild(hour4Time);
 
   const hour4Img = document.createElement("img");
