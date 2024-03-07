@@ -65,7 +65,7 @@ export function createForecastDiv(forecastObj) {
   hour1.appendChild(hour1Time);
 
   const hour1Img = document.createElement("img");
-  hour1Img.src = "/src/images/sun.svg";
+  hour1Img.src = "/src/images/weatherConditions/sun.svg";
   hour1.appendChild(hour1Img);
 
   const hour1Temp = document.createElement("p");
@@ -85,7 +85,7 @@ export function createForecastDiv(forecastObj) {
   hour2.appendChild(hour2Time);
 
   const hour2Img = document.createElement("img");
-  hour2Img.src = "/src/images/cloud.svg";
+  hour2Img.src = "/src/images/weatherConditions/cloud.svg";
   hour2.appendChild(hour2Img);
 
   const hour2Temp = document.createElement("p");
@@ -105,7 +105,7 @@ export function createForecastDiv(forecastObj) {
   hour3.appendChild(hour3Time);
 
   const hour3Img = document.createElement("img");
-  hour3Img.src = "/src/images/cloud.svg";
+  hour3Img.src = "/src/images/weatherConditions/cloud.svg";
   hour3.appendChild(hour3Img);
 
   const hour3Temp = document.createElement("p");
@@ -125,7 +125,7 @@ export function createForecastDiv(forecastObj) {
   hour4.appendChild(hour4Time);
 
   const hour4Img = document.createElement("img");
-  hour4Img.src = "/src/images/sun.svg";
+  hour4Img.src = "/src/images/weatherConditions/sun.svg";
   hour4.appendChild(hour4Img);
 
   const hour4Temp = document.createElement("p");
