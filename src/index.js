@@ -34,7 +34,7 @@ export async function getData(city) {
 
     const data = await response.json();
 
-    // console.log(data);
+    console.log(data);
 
     return data;
   } catch (error) {
@@ -50,7 +50,7 @@ async function combinedData(city) {
     const tempData = await getTempData(apiCall);
 
     const forecast = await getForecastData(apiCall);
-    // console.log(forecast);
+    console.log(forecast);
 
     const data = { ...location, ...tempData, ...forecast };
 

@@ -13,7 +13,7 @@ export async function getForecastData(data) {
   for (let i = 0; i < hrsArr.length; i++) {
     if (hrsArr[i] > 23) {
       const { temp_f, temp_c, condition, time } =
-        data.forecast.forecastday[1].hour[hrsArr[i] - 23];
+        data.forecast.forecastday[1].hour[hrsArr[i] - 24]; //changed this line, check if bug occurs in time
       const { text } = condition;
       let updatedTime = parseInt(time.slice(11, 13));
       if (updatedTime === 0) {

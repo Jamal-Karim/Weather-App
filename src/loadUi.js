@@ -119,7 +119,7 @@ function createLeftContainer(
   weatherCondition.classList.add("weatherCondition");
 
   const weatherImg = document.createElement("img");
-  weatherImg.src = "/src/images/sun.svg"; //change to parameter
+  weatherImg.src = "/src/images/weatherConditions/thunder.svg"; //change to parameter
   weatherCondition.appendChild(weatherImg);
 
   //add weather condition div
