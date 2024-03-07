@@ -6,7 +6,6 @@ import { loadWeatherUi } from "./loadUi.js";
 import "./styles/main.css";
 
 const body = document.querySelector("body");
-const errorMessage = document.getElementById("error");
 const userCity = document.getElementById("city");
 const searchIcon = document.querySelector(".searchIcon");
 
@@ -55,18 +54,33 @@ async function combinedData(city) {
     const data = { ...location, ...tempData, ...forecast };
 
     console.log(data);
+    body.appendChild(loadWeatherUi());
   } catch (error) {
     console.error("Error combining data:", error);
   }
 }
 
-searchIcon.addEventListener("click", (event) => {
+searchIcon.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const city = userCity.value;
 
-  // errorMessage.textContent = '';
+  await combinedData(city);
+  // body.appendChild(loadWeatherUi());
+});
 
-  combinedData(city);
-  body.appendChild(loadWeatherUi());
+body.addEventListener("click", async (event) => {
+  const userCity2 = document.getElementById("city2");
+  if (event.target.matches(".searchIcon2 img")) {
+    console.log("search  2 clicked!");
+    event.preventDefault();
+
+    const city = userCity2.value;
+    const existingWeatherUi = document.querySelector(".weatherUi");
+    if (existingWeatherUi) {
+      existingWeatherUi.remove();
+    }
+
+    await combinedData(city);
+  }
 });
