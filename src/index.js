@@ -54,7 +54,21 @@ async function combinedData(city) {
     const data = { ...location, ...tempData, ...forecast };
 
     console.log(data);
-    body.appendChild(loadWeatherUi());
+    body.appendChild(
+      loadWeatherUi(
+        "sleet",
+        data.tempF,
+        data.tempC,
+        data.location,
+        data.condition,
+        data.sunrise,
+        data.sunset,
+        data.humidity,
+        data.wind_mph,
+        data.uv,
+        data.forecast
+      )
+    );
   } catch (error) {
     console.error("Error combining data:", error);
   }

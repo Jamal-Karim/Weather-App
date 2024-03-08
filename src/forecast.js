@@ -17,14 +17,14 @@ export async function getForecastData(data) {
       const { text } = condition;
       let updatedTime = parseInt(time.slice(11, 13));
       if (updatedTime === 0) {
-        updatedTime = "12:00 AM";
+        updatedTime = "12:00AM";
       } else if (updatedTime <= 11) {
-        updatedTime = `${updatedTime}:00 AM`;
+        updatedTime = `${updatedTime}:00AM`;
       } else if (updatedTime === 12) {
-        updatedTime = "12:00 PM";
+        updatedTime = "12:00PM";
       } else {
         updatedTime -= 12;
-        updatedTime = `${updatedTime}:00 PM`;
+        updatedTime = `${updatedTime}:00PM`;
       }
       forecast[hrsArr[i]] = { temp_f, temp_c, text, updatedTime };
     } else {
@@ -33,14 +33,14 @@ export async function getForecastData(data) {
       const { text } = condition;
       let updatedTime = parseInt(time.slice(11, 13));
       if (updatedTime === 0) {
-        updatedTime = "12:00 AM";
+        updatedTime = "12:00AM";
       } else if (updatedTime <= 11) {
-        updatedTime = `${updatedTime}:00 AM`;
+        updatedTime = `${updatedTime}:00AM`;
       } else if (updatedTime === 12) {
-        updatedTime = "12:00 PM";
+        updatedTime = "12:00PM";
       } else {
         updatedTime -= 12;
-        updatedTime = `${updatedTime}:00 PM`;
+        updatedTime = `${updatedTime}:00PM`;
       }
       forecast[hrsArr[i]] = { temp_f, temp_c, text, updatedTime };
     }
@@ -61,7 +61,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Time = document.createElement("p");
   hour1Time.classList.add("time");
-  hour1Time.textContent = "1:00PM";
+  hour1Time.textContent = forecastObj[20].updatedTime;
   hour1.appendChild(hour1Time);
 
   const hour1Img = document.createElement("img");
@@ -70,7 +70,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Temp = document.createElement("p");
   hour1Temp.classList.add("forecastTemp");
-  hour1Temp.textContent = "86 °F";
+  hour1Temp.textContent = `${forecastObj[20].temp_f} °F`;
   hour1.appendChild(hour1Temp);
 
   forecastDiv.appendChild(hour1);
@@ -81,7 +81,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Time = document.createElement("p");
   hour2Time.classList.add("time");
-  hour2Time.textContent = "2:00PM";
+  hour2Time.textContent = forecastObj[21].updatedTime;
   hour2.appendChild(hour2Time);
 
   const hour2Img = document.createElement("img");
@@ -90,7 +90,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Temp = document.createElement("p");
   hour2Temp.classList.add("forecastTemp");
-  hour2Temp.textContent = "86 °F";
+  hour2Temp.textContent = `${forecastObj[21].temp_f} °F`;
   hour2.appendChild(hour2Temp);
 
   forecastDiv.appendChild(hour2);
@@ -101,7 +101,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Time = document.createElement("p");
   hour3Time.classList.add("time");
-  hour3Time.textContent = "3:00PM";
+  hour3Time.textContent = forecastObj[22].updatedTime;
   hour3.appendChild(hour3Time);
 
   const hour3Img = document.createElement("img");
@@ -110,7 +110,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Temp = document.createElement("p");
   hour3Temp.classList.add("forecastTemp");
-  hour3Temp.textContent = "46 °F";
+  hour3Temp.textContent = `${forecastObj[22].temp_f} °F`;
   hour3.appendChild(hour3Temp);
 
   forecastDiv.appendChild(hour3);
@@ -121,7 +121,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Time = document.createElement("p");
   hour4Time.classList.add("time");
-  hour4Time.textContent = "4:00PM";
+  hour4Time.textContent = forecastObj[23].updatedTime;
   hour4.appendChild(hour4Time);
 
   const hour4Img = document.createElement("img");
@@ -130,7 +130,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Temp = document.createElement("p");
   hour4Temp.classList.add("forecastTemp");
-  hour4Temp.textContent = "46 °F";
+  hour4Temp.textContent = `${forecastObj[23].temp_f} °F`;
   hour4.appendChild(hour4Temp);
 
   forecastDiv.appendChild(hour4);

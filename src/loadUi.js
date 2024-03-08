@@ -119,7 +119,7 @@ function createLeftContainer(
   weatherCondition.classList.add("weatherCondition");
 
   const weatherImg = document.createElement("img");
-  weatherImg.src = "/src/images/weatherConditions/thunder.svg"; //change to parameter
+  weatherImg.src = `/src/images/weatherConditions/${weatherSvg}.svg`; //change to parameter
   weatherCondition.appendChild(weatherImg);
 
   //add weather condition div
@@ -127,14 +127,14 @@ function createLeftContainer(
 
   const temperature = document.createElement("h1");
   temperature.classList.add("temp");
-  temperature.textContent = "86 °F";
+  temperature.textContent = `${fahrenheit} °F`;
 
   //append temp
   currentStats.appendChild(temperature);
 
   const place = document.createElement("p");
   place.classList.add("place");
-  place.textContent = "Corona, Sunny";
+  place.textContent = `${cityName}, ${weatherText}`;
 
   //append place
   currentStats.appendChild(place);
@@ -148,7 +148,7 @@ function createLeftContainer(
 
   const sunRiseText = document.createElement("p");
   sunRiseText.classList.add("sunriseTime");
-  sunRiseText.textContent = "6:27 AM";
+  sunRiseText.textContent = sunRise;
 
   const sunRiseSvg = document.createElement("img");
   sunRiseSvg.src = "/src/images/sunrise.svg";
@@ -162,7 +162,7 @@ function createLeftContainer(
 
   const sunSetText = document.createElement("p");
   sunSetText.classList.add("sunsetTime");
-  sunSetText.textContent = "5:41 PM";
+  sunSetText.textContent = sunSet;
 
   const sunSetSvg = document.createElement("img");
   sunSetSvg.src = "/src/images/sunset.svg";
@@ -180,4 +180,28 @@ function createLeftContainer(
   leftContainer.appendChild(currentStats);
 
   return leftContainer;
+}
+
+function chooseSvg(condition) {
+  condition = condition.toLowerCase();
+
+  if (condition.includes("sunny") || condition.includes("clear")) {
+    return "sun.svg";
+  } else if (condition.includes("cloudy") || condition.includes("overcast")) {
+    return "cloud.svg";
+  } else if (
+    condition.includes("drizzle") ||
+    condition.includes("rain") ||
+    condition.includes("mist")
+  ) {
+    return "rain.svg";
+  } else if (condition.includes("sleet")) {
+    return "sleet.svg";
+  } else if (condition.includes("snow")) {
+    return "snow.svg";
+  } else if (condition.includes("fog")) {
+    return "fog.svg";
+  } else if (condition.includes("thunder")) {
+    return "thunder.svg";
+  }
 }

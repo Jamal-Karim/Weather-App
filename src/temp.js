@@ -21,7 +21,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   humidityContainer.appendChild(humidityIcon);
 
   const humidityText = document.createElement("h2");
-  humidityText.textContent = "77%";
+  humidityText.textContent = `${humidity}%`;
   humidityContainer.appendChild(humidityText);
 
   //append humidity div
@@ -36,7 +36,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   windContainer.appendChild(windIcon);
 
   const windText = document.createElement("h2");
-  windText.textContent = "2.2mph";
+  windText.textContent = `${wind_mph}mph`;
   windContainer.appendChild(windText);
 
   //append wind div
@@ -51,7 +51,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   uvContainer.appendChild(uvIcon);
 
   const uvText = document.createElement("h2");
-  uvText.textContent = "1.6";
+  uvText.textContent = uv;
   uvContainer.appendChild(uvText);
 
   //append uv div
