@@ -50,6 +50,24 @@ export async function getForecastData(data) {
 }
 
 export function createForecastDiv(forecastObj) {
+  const firstHr = forecastObj[Object.keys(forecastObj)[0]].updatedTime;
+  const secondHr = forecastObj[Object.keys(forecastObj)[1]].updatedTime;
+  const thirdHr = forecastObj[Object.keys(forecastObj)[2]].updatedTime;
+  const fourthHr = forecastObj[Object.keys(forecastObj)[3]].updatedTime;
+
+  const firstTempF = parseInt(
+    forecastObj[Object.keys(forecastObj)[0]].temp_f.toString().slice(0, 2)
+  );
+  const secondTempF = parseInt(
+    forecastObj[Object.keys(forecastObj)[1]].temp_f.toString().slice(0, 2)
+  );
+  const thirdTempF = parseInt(
+    forecastObj[Object.keys(forecastObj)[2]].temp_f.toString().slice(0, 2)
+  );
+  const fourthTempF = parseInt(
+    forecastObj[Object.keys(forecastObj)[3]].temp_f.toString().slice(0, 2)
+  );
+
   const forecastDiv = document.createElement("div");
   forecastDiv.classList.add("forecast");
 
@@ -61,7 +79,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Time = document.createElement("p");
   hour1Time.classList.add("time");
-  hour1Time.textContent = forecastObj[Object.keys(forecastObj)[0]].updatedTime;
+  hour1Time.textContent = firstHr;
   hour1.appendChild(hour1Time);
 
   const hour1Img = document.createElement("img");
@@ -70,9 +88,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Temp = document.createElement("p");
   hour1Temp.classList.add("forecastTemp");
-  hour1Temp.textContent = `${
-    forecastObj[Object.keys(forecastObj)[0]].temp_f
-  } °F`;
+  hour1Temp.textContent = `${firstTempF} °F`;
   hour1.appendChild(hour1Temp);
 
   forecastDiv.appendChild(hour1);
@@ -83,7 +99,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Time = document.createElement("p");
   hour2Time.classList.add("time");
-  hour2Time.textContent = forecastObj[Object.keys(forecastObj)[1]].updatedTime;
+  hour2Time.textContent = secondHr;
   hour2.appendChild(hour2Time);
 
   const hour2Img = document.createElement("img");
@@ -92,9 +108,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Temp = document.createElement("p");
   hour2Temp.classList.add("forecastTemp");
-  hour2Temp.textContent = `${
-    forecastObj[Object.keys(forecastObj)[1]].temp_f
-  } °F`;
+  hour2Temp.textContent = `${secondTempF} °F`;
   hour2.appendChild(hour2Temp);
 
   forecastDiv.appendChild(hour2);
@@ -105,7 +119,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Time = document.createElement("p");
   hour3Time.classList.add("time");
-  hour3Time.textContent = forecastObj[Object.keys(forecastObj)[2]].updatedTime;
+  hour3Time.textContent = thirdHr;
   hour3.appendChild(hour3Time);
 
   const hour3Img = document.createElement("img");
@@ -114,9 +128,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Temp = document.createElement("p");
   hour3Temp.classList.add("forecastTemp");
-  hour3Temp.textContent = `${
-    forecastObj[Object.keys(forecastObj)[2]].temp_f
-  } °F`;
+  hour3Temp.textContent = `${thirdTempF} °F`;
   hour3.appendChild(hour3Temp);
 
   forecastDiv.appendChild(hour3);
@@ -127,7 +139,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Time = document.createElement("p");
   hour4Time.classList.add("time");
-  hour4Time.textContent = forecastObj[Object.keys(forecastObj)[3]].updatedTime;
+  hour4Time.textContent = fourthHr;
   hour4.appendChild(hour4Time);
 
   const hour4Img = document.createElement("img");
@@ -136,9 +148,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Temp = document.createElement("p");
   hour4Temp.classList.add("forecastTemp");
-  hour4Temp.textContent = `${
-    forecastObj[Object.keys(forecastObj)[3]].temp_f
-  } °F`;
+  hour4Temp.textContent = `${fourthTempF} °F`;
   hour4.appendChild(hour4Temp);
 
   forecastDiv.appendChild(hour4);
