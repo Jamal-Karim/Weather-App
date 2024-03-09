@@ -130,8 +130,6 @@ function createLeftContainer(
 
   const temperature = document.createElement("h1");
   temperature.classList.add("temp");
-  temperature.textContent = `${fahrenheit} °F`;
-
   //append temp
   currentStats.appendChild(temperature);
 

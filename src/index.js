@@ -9,6 +9,11 @@ const body = document.querySelector("body");
 const userCity = document.getElementById("city");
 const searchIcon = document.querySelector(".searchIcon");
 
+let onCelsius = false;
+export { onCelsius };
+
+let dataObj;
+
 userCity.addEventListener("focus", () => {
   userCity.removeAttribute("placeholder");
 });
@@ -54,6 +59,7 @@ async function combinedData(city) {
     const data = { ...location, ...tempData, ...forecast };
 
     console.log(data);
+    dataObj = data;
     body.appendChild(
       loadWeatherUi(
         data.condition,
@@ -101,8 +107,9 @@ body.addEventListener("click", async (event) => {
 });
 
 //temp button toggling and logic
-body.addEventListener("click", (event) => {
+body.addEventListener("click", async (event) => {
   const target = event.target;
+  const tempStat = document.querySelector(".temp");
 
   if (target.classList.contains("tempBtn")) {
     const fBtn = document.querySelector(".F");
@@ -111,9 +118,17 @@ body.addEventListener("click", (event) => {
     if (target === fBtn) {
       fBtn.classList.add("activeBtn");
       cBtn.classList.remove("activeBtn");
+      onCelsius = false;
+      if (tempStat) {
+        tempStat.textContent = `${dataObj.tempF} °F`;
+      }
     } else if (target === cBtn) {
       cBtn.classList.add("activeBtn");
       fBtn.classList.remove("activeBtn");
+      onCelsius = true;
+      if (tempStat) {
+        tempStat.textContent = `${dataObj.tempC} °C`;
+      }
     }
   }
 });
