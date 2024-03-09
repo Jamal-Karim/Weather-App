@@ -119,7 +119,7 @@ function createLeftContainer(
   weatherCondition.classList.add("weatherCondition");
 
   const weatherImg = document.createElement("img");
-  weatherImg.src = `/src/images/weatherConditions/${weatherSvg}.svg`; //change to parameter
+  weatherImg.src = `/src/images/weatherConditions/${chooseSvg(weatherSvg)}`; //change to parameter
   weatherCondition.appendChild(weatherImg);
 
   //add weather condition div
@@ -148,7 +148,7 @@ function createLeftContainer(
 
   const sunRiseText = document.createElement("p");
   sunRiseText.classList.add("sunriseTime");
-  sunRiseText.textContent = sunRise;
+  sunRiseText.textContent = sunRise.slice(1);
 
   const sunRiseSvg = document.createElement("img");
   sunRiseSvg.src = "/src/images/sunrise.svg";
@@ -162,7 +162,7 @@ function createLeftContainer(
 
   const sunSetText = document.createElement("p");
   sunSetText.classList.add("sunsetTime");
-  sunSetText.textContent = sunSet;
+  sunSetText.textContent = sunSet.slice(1);
 
   const sunSetSvg = document.createElement("img");
   sunSetSvg.src = "/src/images/sunset.svg";
@@ -182,7 +182,7 @@ function createLeftContainer(
   return leftContainer;
 }
 
-function chooseSvg(condition) {
+export function chooseSvg(condition) {
   condition = condition.toLowerCase();
 
   if (condition.includes("sunny") || condition.includes("clear")) {

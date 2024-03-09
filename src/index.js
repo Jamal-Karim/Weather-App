@@ -56,7 +56,7 @@ async function combinedData(city) {
     console.log(data);
     body.appendChild(
       loadWeatherUi(
-        "sleet",
+        data.condition,
         data.tempF,
         data.tempC,
         data.location,
