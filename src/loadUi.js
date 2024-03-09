@@ -55,11 +55,14 @@ export function loadWeatherUi(
   const F = document.createElement("button");
   F.textContent = "F";
   F.classList.add("tempBtn");
+  F.classList.add("activeBtn");
+  F.classList.add("F");
   tempBtns.appendChild(F);
 
   const C = document.createElement("button");
   C.textContent = "C";
   C.classList.add("tempBtn");
+  C.classList.add("C");
   tempBtns.appendChild(C);
 
   //appending temp buttons to header

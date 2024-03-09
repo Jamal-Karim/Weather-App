@@ -74,15 +74,16 @@ async function combinedData(city) {
   }
 }
 
+//landing page for loading first weather ui
 searchIcon.addEventListener("click", async (event) => {
   event.preventDefault();
 
   const city = userCity.value;
 
   await combinedData(city);
-  // body.appendChild(loadWeatherUi());
 });
 
+//loading weather ui after initial one
 body.addEventListener("click", async (event) => {
   const userCity2 = document.getElementById("city2");
   if (event.target.matches(".searchIcon2 img")) {
@@ -96,5 +97,23 @@ body.addEventListener("click", async (event) => {
     }
 
     await combinedData(city);
+  }
+});
+
+//temp button toggling and logic
+body.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.classList.contains("tempBtn")) {
+    const fBtn = document.querySelector(".F");
+    const cBtn = document.querySelector(".C");
+
+    if (target === fBtn) {
+      fBtn.classList.add("activeBtn");
+      cBtn.classList.remove("activeBtn");
+    } else if (target === cBtn) {
+      cBtn.classList.add("activeBtn");
+      fBtn.classList.remove("activeBtn");
+    }
   }
 });
