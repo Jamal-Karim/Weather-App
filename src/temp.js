@@ -21,7 +21,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   humidityContainer.classList.add("humidity");
 
   const humidityIcon = document.createElement("img");
-  humidityIcon.src = "/src/images/humidity.svg";
+  humidityIcon.src = "images/humidity.svg";
   humidityContainer.appendChild(humidityIcon);
 
   const humidityText = document.createElement("h2");
@@ -36,7 +36,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   windContainer.classList.add("wind");
 
   const windIcon = document.createElement("img");
-  windIcon.src = "/src/images/wind.svg";
+  windIcon.src = "images/wind.svg";
   windContainer.appendChild(windIcon);
 
   const windText = document.createElement("h2");
@@ -51,7 +51,7 @@ export function createHumidityWindUvContainer(humidity, wind_mph, uv) {
   uvContainer.classList.add("uv");
 
   const uvIcon = document.createElement("img");
-  uvIcon.src = "/src/images/uv.svg";
+  uvIcon.src = "images/uv.svg";
   uvContainer.appendChild(uvIcon);
 
   const uvText = document.createElement("h2");

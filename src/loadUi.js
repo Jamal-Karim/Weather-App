@@ -41,7 +41,7 @@ export function loadWeatherUi(
   const searchDiv = document.createElement("div");
   searchDiv.classList.add("searchIcon2");
   const searchImg = document.createElement("img");
-  searchImg.src = "/src/images/searchIcon.svg";
+  searchImg.src = "images/searchIcon.svg";
   searchDiv.appendChild(searchImg);
   inputContainer.appendChild(searchDiv);
 
@@ -122,7 +122,7 @@ function createLeftContainer(
   weatherCondition.classList.add("weatherCondition");
 
   const weatherImg = document.createElement("img");
-  weatherImg.src = `/src/images/weatherConditions/${chooseSvg(weatherSvg)}`;
+  weatherImg.src = `images/weatherConditions/${chooseSvg(weatherSvg)}`;
   weatherCondition.appendChild(weatherImg);
 
   //add weather condition div
@@ -153,7 +153,7 @@ function createLeftContainer(
   sunRiseText.textContent = sunRise.slice(1);
 
   const sunRiseSvg = document.createElement("img");
-  sunRiseSvg.src = "/src/images/sunrise.svg";
+  sunRiseSvg.src = "images/sunrise.svg";
 
   sunRiseDiv.appendChild(sunRiseText);
   sunRiseDiv.appendChild(sunRiseSvg);
@@ -167,7 +167,7 @@ function createLeftContainer(
   sunSetText.textContent = sunSet.slice(1);
 
   const sunSetSvg = document.createElement("img");
-  sunSetSvg.src = "/src/images/sunset.svg";
+  sunSetSvg.src = "images/sunset.svg";
 
   sunSetDiv.appendChild(sunSetText);
   sunSetDiv.appendChild(sunSetSvg);
