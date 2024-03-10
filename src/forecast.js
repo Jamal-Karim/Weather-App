@@ -95,6 +95,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour1Temp = document.createElement("p");
   hour1Temp.classList.add("forecastTemp");
+  hour1Temp.id = "forecastTemp1";
   hour1Temp.textContent = `${firstTempF} °F`;
   hour1.appendChild(hour1Temp);
 
@@ -115,6 +116,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour2Temp = document.createElement("p");
   hour2Temp.classList.add("forecastTemp");
+  hour2Temp.id = "forecastTemp2";
   hour2Temp.textContent = `${secondTempF} °F`;
   hour2.appendChild(hour2Temp);
 
@@ -135,6 +137,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour3Temp = document.createElement("p");
   hour3Temp.classList.add("forecastTemp");
+  hour3Temp.id = "forecastTemp3";
   hour3Temp.textContent = `${thirdTempF} °F`;
   hour3.appendChild(hour3Temp);
 
@@ -155,6 +158,7 @@ export function createForecastDiv(forecastObj) {
 
   const hour4Temp = document.createElement("p");
   hour4Temp.classList.add("forecastTemp");
+  hour4Temp.id = "forecastTemp4";
   hour4Temp.textContent = `${fourthTempF} °F`;
   hour4.appendChild(hour4Temp);
 

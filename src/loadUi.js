@@ -122,7 +122,7 @@ function createLeftContainer(
   weatherCondition.classList.add("weatherCondition");
 
   const weatherImg = document.createElement("img");
-  weatherImg.src = `/src/images/weatherConditions/${chooseSvg(weatherSvg)}`; //change to parameter
+  weatherImg.src = `/src/images/weatherConditions/${chooseSvg(weatherSvg)}`;
   weatherCondition.appendChild(weatherImg);
 
   //add weather condition div
@@ -130,6 +130,7 @@ function createLeftContainer(
 
   const temperature = document.createElement("h1");
   temperature.classList.add("temp");
+  temperature.textContent = `${fahrenheit} °F`; //fix this for toggling button
   //append temp
   currentStats.appendChild(temperature);
 

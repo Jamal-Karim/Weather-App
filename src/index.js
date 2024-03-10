@@ -2,6 +2,7 @@ import { getLocationData } from "./location.js";
 import { getTempData } from "./temp.js";
 import { getForecastData } from "./forecast.js";
 import { loadWeatherUi } from "./loadUi.js";
+import { handleCurrentTemp } from "./buttons.js";
 
 import "./styles/main.css";
 
@@ -60,6 +61,7 @@ async function combinedData(city) {
 
     console.log(data);
     dataObj = data;
+    console.log(dataObj.forecast[Object.keys(dataObj.forecast)[0]]);
     body.appendChild(
       loadWeatherUi(
         data.condition,
@@ -107,28 +109,6 @@ body.addEventListener("click", async (event) => {
 });
 
 //temp button toggling and logic
-body.addEventListener("click", async (event) => {
-  const target = event.target;
-  const tempStat = document.querySelector(".temp");
-
-  if (target.classList.contains("tempBtn")) {
-    const fBtn = document.querySelector(".F");
-    const cBtn = document.querySelector(".C");
-
-    if (target === fBtn) {
-      fBtn.classList.add("activeBtn");
-      cBtn.classList.remove("activeBtn");
-      onCelsius = false;
-      if (tempStat) {
-        tempStat.textContent = `${dataObj.tempF} °F`;
-      }
-    } else if (target === cBtn) {
-      cBtn.classList.add("activeBtn");
-      fBtn.classList.remove("activeBtn");
-      onCelsius = true;
-      if (tempStat) {
-        tempStat.textContent = `${dataObj.tempC} °C`;
-      }
-    }
-  }
+body.addEventListener("click", (event) => {
+  handleCurrentTemp(event, dataObj, onCelsius);
 });
