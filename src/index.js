@@ -95,16 +95,18 @@ searchIcon.addEventListener("click", async (event) => {
 body.addEventListener("click", async (event) => {
   const userCity2 = document.getElementById("city2");
   if (event.target.matches(".searchIcon2 img")) {
-    console.log("search  2 clicked!");
     event.preventDefault();
 
-    const city = userCity2.value;
-    const existingWeatherUi = document.querySelector(".weatherUi");
-    if (existingWeatherUi) {
-      existingWeatherUi.remove();
+    try {
+      await combinedData(city);
+      if (existingWeatherUi) {
+        existingWeatherUi.remove();
+      }
+    } catch (error) {
+      console.error("Error fetching or rendering data:", error);
+      userCity2.value = "";
+      userCity2.setAttribute("placeholder", "Not valid city");
     }
-
-    await combinedData(city);
   }
 });
 
