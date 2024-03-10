@@ -79,6 +79,7 @@ async function combinedData(city) {
     );
   } catch (error) {
     console.error("Error combining data:", error);
+    throw error;
   }
 }
 
@@ -93,17 +94,24 @@ searchIcon.addEventListener("click", async (event) => {
 
 //loading weather ui after initial one
 body.addEventListener("click", async (event) => {
-  const userCity2 = document.getElementById("city2");
-  if (event.target.matches(".searchIcon2 img")) {
-    event.preventDefault();
+  let userCity2;
+  try {
+    userCity2 = document.getElementById("city2");
+    if (event.target.matches(".searchIcon2 img")) {
+      console.log("search  2 clicked!");
+      event.preventDefault();
 
-    try {
+      const city = userCity2.value;
       await combinedData(city);
+
+      const existingWeatherUi = document.querySelector(".weatherUi");
       if (existingWeatherUi) {
         existingWeatherUi.remove();
       }
-    } catch (error) {
-      console.error("Error fetching or rendering data:", error);
+    }
+  } catch (error) {
+    console.error("Error handling event:", error);
+    if (userCity2) {
       userCity2.value = "";
       userCity2.setAttribute("placeholder", "Not valid city");
     }
