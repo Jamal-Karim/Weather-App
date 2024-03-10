@@ -10,7 +10,7 @@ const body = document.querySelector("body");
 async function getData(city) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=${city}&days=3`
+      `https://api.weatherapi.com/v1/forecast.json?key=9da97e80930143a38c213928241202&q=${city}&days=3`
     );
 
     if (!response.ok) {
