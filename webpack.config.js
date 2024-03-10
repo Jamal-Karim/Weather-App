@@ -24,6 +24,10 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          from: "src/styles/main.css",
+          to: "main.css",
+        },
+        {
           from: "src/images",
           to: "images",
         },
